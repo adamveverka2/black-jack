@@ -1,5 +1,5 @@
 ## Blackjack
-#blackjack on rp pico controlled using buttons
+blackjack on rp pico controlled using buttons
 
 normal blackjack  
 still work in progress  
