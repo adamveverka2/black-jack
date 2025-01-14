@@ -8,16 +8,17 @@ Hra blackjack ovládaná pomocí tlačítek s výstupem do konzole
 3. [Ukázka](#Ukázka)
 
 ## Herní funkce
-    -hra s jedním párem karet
-      -hit
-      -pass
-      -double
-    -hra s dvěma páry karet
-      -hit
-      -pass
-      -double
-
+-hra s jedním párem karet  
+&emsp;-hit  
+&emsp;-pass  
+&emsp;-double  
+-hra s dvěma páry karet (split)  
+&emsp;-hit  
+&emsp;-pass  
+&emsp;-double  
 ## Hardware
-
-
+-**Raspberry Pi Pico**: (https://www.raspberrypi.com/products/raspberry-pi-pico)  
+-nepájivé pole  
+-vodiče  
+-tlačítko  
 ## Ukázka
