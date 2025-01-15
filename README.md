@@ -42,5 +42,5 @@ Pro spuštění této hry budete potřebovat:
 ## Ukázka
 
 ![Ukázkový obrázek](https://github.com/user-attachments/assets/a1149dea-c220-4db8-8428-70604592c5b3)
-https://www.youtube.com/watch?v=t1e28X3nZaQ
+**video:**https://www.youtube.com/watch?v=t1e28X3nZaQ
 ---
