@@ -12,7 +12,6 @@ button_split = Pin(5, Pin.IN, Pin.PULL_UP)
 BLACKJACK = 21
 DEALER_MIN = 16
 BLACKJACK_PAYOUT = 2.5
-DEBOUNCE_DELAY = 0.3  # 300ms debounce delay
 
 hand_bust1 = 0
 hand_bust2 = 0
@@ -52,7 +51,7 @@ def hand_value(hand):
 def is_button_pressed(button):
     global last_pressed_time
     current_time = time.ticks_ms()
-    if not button.value() and (current_time - last_pressed_time > DEBOUNCE_DELAY * 1000):
+    if not button.value() and (current_time - last_pressed_time > debounce_delay * 1000):
         last_pressed_time = current_time
         return True
     return False
@@ -60,7 +59,7 @@ def is_button_pressed(button):
 def game(player_value, dealer_value):
     global balance, bet
 
-    if dealer_value > 21 or player_value > dealer_value:
+    if dealer_value > BLACKJACK or player_value > dealer_value:
         print("Victory! Player wins!")
         balance += bet * 2
     elif player_value == dealer_value:
@@ -80,7 +79,7 @@ def game2(player_value1,player_value2,dealer_value):
     
     
     if hand_bust1 == 1 and hand_bust2 == 0:
-        if dealer_value > 21 or player_value2 > dealer_value:
+        if dealer_value > BLACKJACK or player_value2 > dealer_value:
             print("Hand1 busts, Hand2 wins")
             balance += bet2 * 2
         elif player_value2 == dealer_value:
@@ -90,7 +89,7 @@ def game2(player_value1,player_value2,dealer_value):
             print("Game over! Dealer wins.")
     
     elif hand_bust1 == 0 and hand_bust2 == 1:
-        if dealer_value > 21 or player_value1 > dealer_value:
+        if dealer_value > BLACKJACK or player_value1 > dealer_value:
             print("Hand2 busts, Hand1 wins")
             balance += bet1 * 2
         elif player_value1 == dealer_value:
@@ -103,7 +102,7 @@ def game2(player_value1,player_value2,dealer_value):
         print("Game over! Both hands bust, Dealer wins.")
     
     else:
-        if dealer_value > 21 or player_value2 > dealer_value:
+        if dealer_value > BLACKJACK or player_value2 > dealer_value:
             print("Hand2 wins")
             balance += bet2 * 2
         elif player_value2 == dealer_value:
@@ -112,7 +111,7 @@ def game2(player_value1,player_value2,dealer_value):
         else:
             print("Hand2 busts, Dealer wins.")
         
-        if dealer_value > 21 or player_value1 > dealer_value:
+        if dealer_value > BLACKJACK or player_value1 > dealer_value:
             print("Hand1 wins")
             balance += bet1 * 2
         elif player_value1 == dealer_value:
@@ -144,7 +143,7 @@ def check_blackjack(player_value, dealer_value):
 def dealer_turn():
     global dealer, dealer_value, shuffled_deck
     while dealer_value <= DEALER_MIN:
-        new_card = hit(dealer, shuffled_deck)
+        dealer.append(shuffled_deck.pop())
         dealer_value = hand_value(dealer)
         print("Dealer's hand:", dealer, "-> Total Value:", dealer_value)
 
@@ -190,16 +189,6 @@ def hit(player):
         print("\nGame over! Player busts.")
         reset_game()
 
-def pass2():
-    global current_hand,ha
-    
-    if current_hand == 2:
-         game2(player_value1,player_value2,dealer_value)
-         end_split = 1
-    elif current_hand == 1:
-        print("\nplayer passes hand 1!")
-        current_hand = 2
-    
 def hit2(player):
     global current_hand,hand_bust1,hand_bust2,end_split
     
@@ -231,6 +220,16 @@ def pass1():
     dealer_value = hand_value(dealer)  # Ensure dealer's value is updated after their turn
     game(player_value, dealer_value)
 
+def pass2():
+    global current_hand,ha
+    
+    if current_hand == 2:
+         game2(player_value1,player_value2,dealer_value)
+         end_split = 1
+    elif current_hand == 1:
+        print("\nplayer passes hand 1!")
+        current_hand = 2
+    
 def double(player):
     global bet, balance
     
@@ -384,3 +383,4 @@ while True:
                     break
                     
     time.sleep(0.05)
+
