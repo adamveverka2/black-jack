@@ -85,7 +85,7 @@ Porazit krupiéra tím, že budete mít hodnotu karet **blíže k 21** než krup
 ---
 
 ## Hardware
-- **Raspberry Pi Pico**
+- **[Raspberry Pi Pico 2 H](https://rpishop.cz/590612/raspberry-pi-pico-2-h/)**
 - **[Waveshare 1.3" LCD displej (240×240, SPI)](https://rpishop.cz/lcd-oled-displeje/4022-waveshare-13-lcd-displej-pro-raspberry-pi-pico-240240-spi.html)**
 - **Micro-USB kabel**
 
