@@ -15,13 +15,10 @@ Konzolová hra Blackjack ovládaná tlačítky, která přináší klasický her
 
 ## Hardware
 
-Pro spuštění této hry budete potřebovat:
-
 - **Raspberry Pi Pico**  
-  [Oficiální produktová stránka](https://www.raspberrypi.com/products/raspberry-pi-pico)  
-- Nepájivé pole (Breadboard)
-- Spojovací vodiče
-- Tlačítka
+  [Oficiální produktová stránka](https://www.raspberrypi.com/products/raspberry-pi-pico)
+- **Waveshare 1,3" LCD displej pro Raspberry Pi Pico, 240×240, SPI**
+  [displej:](https://rpishop.cz/lcd-oled-displeje/4022-waveshare-13-lcd-displej-pro-raspberry-pi-pico-240240-spi.html)
 
 ---
 ## Ukázka
