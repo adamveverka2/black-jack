@@ -8,7 +8,7 @@ Konzolová hra Blackjack ovládaná tlačítky, která přináší klasický her
 1. [Cíl](#Cíl)
 2. [Proces](#Proces)
 3. [Problémi](#Problémi)
-4. [Návod k použití](#Návod k použití)
+4. [Návod k použití](#Návodkpoužití)
 5. [Hardware](#hardware)
 6. [Ukázka](#ukázka)
 
@@ -22,23 +22,23 @@ Konzolová hra Blackjack ovládaná tlačítky, která přináší klasický her
   V druhém pololetí jsem napsal kod na renderovaný hry na displeji a spároval jsem ho s kodem.  
   
 ## Problémi  
-  -kvůli používání příkazu time.sleep() není časování hry prosné, tento problém je na první pohled nepatrný.  
-  -kvůli velikosti displeje se na plochu vejdou jen 4 karty v řadě což je problém protože je malá šance že si hráč nebo krupiér může vytáhnout více než čtyři karty tento       
-   problém nemůžu moc spravit protože po zmenšení karet jsou skoro nečitelné.  
-  -z hry jsem musel odstranit možnost rozdělit jednu herní ruku na dva při schodě karet protože na picu mi došla RAM pro zpracování kodu.  
+  - kvůli používání příkazu time.sleep() není časování hry prosné, tento problém je na první pohled nepatrný.  
+  - kvůli velikosti displeje se na plochu vejdou jen 4 karty v řadě což je problém protože je malá šance že si hráč nebo krupiér 
+    může vytáhnout více než čtyři karty tento problém nemůžu moc spravit protože po zmenšení karet jsou skoro nečitelné.  
+  - z hry jsem musel odstranit možnost rozdělit jednu herní ruku na dva při schodě karet protože na picu mi došla RAM pro zpracování kodu.  
   
 ## Návod k použití
-  -nastavovaní balancu a sázky >  
-    joystick nahoru     = zvedne hodnotu ammount  
-    joystick dolu       = zmensi hodnotu ammount  
-    joystick doleve     = odebere hodnotu ammount od balancu/sázky  
-    joystick doprava    = přídá hodnotu ammount od balancu/sázky  
-    joystick stisk      = uloží hodnotu balanc/sazka  
+  - nastavovaní balancu a sázky  
+      joystick nahoru     = zvedne hodnotu ammount  
+      joystick dolu       = zmensi hodnotu ammount  
+      joystick doleve     = odebere hodnotu ammount od balancu/sázky  
+      joystick doprava    = přídá hodnotu ammount od balancu/sázky  
+      joystick stisk      = uloží hodnotu balanc/sazka  
   
-  - prubeh hry >  
-    tlacitko h (hit)    = přidá hráčovy jednu kartu a rozhodne viz:    
-    tlacitko p (pass)   = ukončí hráčovo kolo    
-    tlacitko d (double) = přidá hráčovy jednu kartu a ukončí jeho kolo  
+  - prubeh hry  
+      tlacitko h (hit)    = přidá hráčovy jednu kartu a rozhodne viz:    
+      tlacitko p (pass)   = ukončí hráčovo kolo    
+      tlacitko d (double) = přidá hráčovy jednu kartu a ukončí jeho kolo  
     
 ## Hardware
 - **Raspberry Pi Pico**
