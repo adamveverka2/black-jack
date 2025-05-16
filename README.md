@@ -13,20 +13,6 @@ Konzolová hra Blackjack ovládaná tlačítky, která přináší klasický her
 
 ## Herní funkce
 
-- **Hra s jedním párem karet**
-  - `Hit`: Získejte další kartu.
-  - `Pass`: Ukončete svůj tah.
-  - `Double`: Zdvojnásobte svou sázku a vezměte si ještě jednu kartu.
-
-- **Hra se dvěma páry karet (Split)**
-  - Rozděl pár na dvě ruce.
-  - Každá ruka může samostatně provádět:
-    - `Hit`
-    - `Pass`
-    - `Double`
-
----
-
 ## Hardware
 
 Pro spuštění této hry budete potřebovat:
