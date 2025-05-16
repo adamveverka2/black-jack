@@ -30,6 +30,8 @@ Cílem bylo vytvořit jednoduchou, ale funkční hru Blackjack, běžící na Ra
 - ⏱️ **Zpoždění** – Použití `time.sleep()` ovlivňuje plynulost hry. Není to zásadní, ale časování není ideální.
 - 🃏 **Zobrazování karet** – Displej umožňuje pouze 4 karty v řadě. Při vícero kartách je nutné volit kompromis mezi velikostí a čitelností.
 - 🧠 **Paměť** – Rozdělení ruky (split) bylo odstraněno kvůli limitům RAM u Raspberry Pi Pico.
+- 📹 **Video** -Video se mi nepodařilo natočit kvůli odleskům a světlu z displeje, proto jsem přiložil obrázek, který ukazuje, jak hra vypadá v akci.
+
 
 ---
 
