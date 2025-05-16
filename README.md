@@ -27,7 +27,7 @@ Konzolová hra Blackjack ovládaná tlačítky, která přináší klasický her
     může vytáhnout více než čtyři karty tento problém nemůžu moc spravit protože po zmenšení karet jsou skoro nečitelné.  
   - z hry jsem musel odstranit možnost rozdělit jednu herní ruku na dva při schodě karet protože na picu mi došla RAM pro zpracování kodu.  
   
-## Návod k použití
+## Návodkpoužití
   - nastavovaní balancu a sázky  
       joystick nahoru     = zvedne hodnotu ammount  
       joystick dolu       = zmensi hodnotu ammount  
