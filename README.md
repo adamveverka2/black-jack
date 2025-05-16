@@ -1,51 +1,95 @@
 # Blackjack
 
-Konzolová hra Blackjack ovládaná tlačítky, která přináší klasický herní zážitek přímo na váš Raspberry Pi Pico.
+Konzolová hra Blackjack ovládaná tlačítky, která přináší klasický herní zážitek přímo na váš Raspberry Pi Pico s displejem ve stylu Game Boye.
 
 ---
 
 ## Obsah
-1. [Cíl](#Cíl)
-2. [Proces](#Proces)
-3. [Problémi](#Problémi)
-4. [Návod k použití](#Návodkpoužití)
-5. [Hardware](#hardware)
-6. [Ukázka](#ukázka)
+1. [Cíl](#cíl)
+2. [Proces](#proces)
+3. [Problémy](#problémy)
+4. [Pravidla](#pravidla)
+5. [Návod k použití](#návod-k-použití)
+6. [Hardware](#hardware)
+7. [Ukázka](#ukázka)
 
 ---
 
-## Cíl  
-  Mým cílem bylo udělat blackjack na raspberry pi s displejem na podobu gameboyje.  
-  
-## Proces  
-  V prvním pololetí jsem zhotovil kod pro blackjack s hraním přes tlačítko a vypisované do konzole.  
-  V druhém pololetí jsem napsal kod na renderovaný hry na displeji a spároval jsem ho s kodem.  
-  
-## Problémi  
-  - kvůli používání příkazu time.sleep() není časování hry prosné, tento problém je na první pohled nepatrný.  
-  - kvůli velikosti displeje se na plochu vejdou jen 4 karty v řadě což je problém protože je malá šance že si hráč nebo krupiér 
-    může vytáhnout více než čtyři karty tento problém nemůžu moc spravit protože po zmenšení karet jsou skoro nečitelné.  
-  - z hry jsem musel odstranit možnost rozdělit jednu herní ruku na dva při schodě karet protože na picu mi došla RAM pro zpracování kodu.  
-  
-## Návodkpoužití
-  - nastavovaní balancu a sázky  
-      joystick nahoru     = zvedne hodnotu ammount  
-      joystick dolu       = zmensi hodnotu ammount  
-      joystick doleve     = odebere hodnotu ammount od balancu/sázky  
-      joystick doprava    = přídá hodnotu ammount od balancu/sázky  
-      joystick stisk      = uloží hodnotu balanc/sazka  
-  
-  - prubeh hry  
-      tlacitko h (hit)    = přidá hráčovy jednu kartu a rozhodne viz:    
-      tlacitko p (pass)   = ukončí hráčovo kolo    
-      tlacitko d (double) = přidá hráčovy jednu kartu a ukončí jeho kolo  
-    
+## Cíl
+Cílem bylo vytvořit hratelný Blackjack na Raspberry Pi Pico s displejem, připomínajícím Game Boy.
+
+---
+
+## Proces
+- V prvním pololetí jsem vytvořil konzolovou verzi hry s ovládáním pomocí tlačítek.
+- Ve druhém pololetí jsem přidal renderování hry na displeji a propojil ho s původním kódem.
+
+---
+
+## Problémy
+- Kvůli použití `time.sleep()` není časování hry plynulé, ale při hraní to není příliš znatelné.
+- Displej umožňuje zobrazit pouze 4 karty v jedné řadě. To omezuje hru, protože je malá šance, že hráč nebo krupiér dostane víc než 4 karty. Zmenšení karet způsobuje, že jsou téměř nečitelné.
+- Kvůli nedostatku paměti RAM na Pico jsem musel odstranit možnost rozdělit dvojici karet na dvě herní ruce (split).
+
+---
+
+## Pravidla
+
+# Cíl hry
+Porazit krupiéra tím, že budete mít hodnotu karet **blíže k 21** než krupiér, **aniž byste tuto hodnotu překročili**.
+
+---
+
+# Hodnoty karet
+- **2–10**: Nominální hodnota  
+- **J, Q, K**: 10 bodů  
+- **Eso (A)**: 1 nebo 11 bodů (podle toho, co je výhodnější)
+
+---
+
+# Průběh hry
+
+1. **Prvotní rozdání**:
+   - Každý hráč i krupiér dostane **2 karty**
+   - Krupiér ukáže **1 kartu lícem nahoru**, druhou ponechá **lícem dolů** („hole card“)
+
+2. **Tah krupiéra**:
+   - Krupiér odkryje skrytou kartu
+   - Musí **táhnout, dokud nedosáhne alespoň 17 bodů**
+   - Při hodnotě **17 a více** musí **zůstat stát**
+
+---
+
+# Výhra a výplaty
+- **Blackjack** (eso + karta s hodnotou 10 při prvním rozdání): Výplata **3:2**
+- **Vyšší hodnota než krupiér bez překročení 21**: Výplata **1:1**
+- **Shoda s krupiérem**: **Remíza** (nikdo nevyhrává ani neprohrává)
+- **Krupiér přetáhne, hráč ne**: Hráč **vyhrává**
+
+---
+
+## Návod k použití
+
+### Nastavení sázky a balancu:
+- **Joystick nahoru** – zvýší hodnotu (amount)  
+- **Joystick dolů** – sníží hodnotu  
+- **Joystick doleva** – odečte hodnotu z balancu / přidá k sázce  
+- **Joystick doprava** – přidá hodnotu do balancu / odečte ze sázky  
+- **Joystick stisk** – potvrdí hodnotu balancu / sázky  
+
+### Průběh hry:
+- **Tlačítko H (Hit)** – přidá hráči kartu  
+- **Tlačítko P (Pass)** – ukončí tah hráče  
+- **Tlačítko D (Double)** – přidá hráči kartu a ukončí jeho tah  
+
+---
+
 ## Hardware
 - **Raspberry Pi Pico**
-- **[Waveshare 1,3" LCD displej pro Raspberry Pi Pico, 240×240, SPI](https://rpishop.cz/lcd-oled-displeje/4022-waveshare-13-lcd-displej-pro-raspberry-pi-pico-240240-spi.html)**
-- **Micro-USB power cable**
+- **[Waveshare 1.3" LCD displej (240×240, SPI)](https://rpishop.cz/lcd-oled-displeje/4022-waveshare-13-lcd-displej-pro-raspberry-pi-pico-240240-spi.html)**
+- **Micro-USB kabel**
 
 ---
+
 ## Ukázka
-![1747412186078](https://github.com/user-attachments/assets/97c523bc-52c9-4472-8c38-767d63d46572)
----
+![Ukázka hry](https://github.com/user-attachments/assets/97c523bc-52c9-4472-8c38-767d63d46572)
