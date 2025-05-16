@@ -17,7 +17,7 @@ Konzolová hra Blackjack ovládaná tlačítky, která přináší klasický her
 
 - **Raspberry Pi Pico**  
   [Oficiální produktová stránka](https://www.raspberrypi.com/products/raspberry-pi-pico)
--**[Waveshare 1,3" LCD displej pro Raspberry Pi Pico, 240×240, SPI](https://rpishop.cz/lcd-oled-displeje/4022-waveshare-13-lcd-displej-pro-raspberry-pi-pico-240240-spi.html)**
+-**[Waveshare 1,3" LCD displej pro Raspberry Pi Pico, 240×240, SPI](https://rpishop.cz/lcd-oled-displeje/4022-waveshare-13-lcd-displej-pro-raspberry-pi-pico-240240-spi.html)**  
 
 ---
 ## Ukázka
